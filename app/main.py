@@ -3,18 +3,20 @@ from pydantic import BaseModel
 import yaml
 import json
 from sentence_transformers import SentenceTransformer, util
+from .engine import FinScribeEngine
 import os
 import re
 
-class Item(BaseModel):
+app = FastAPI()
+engine = FinScribeEngine()
+
+class TransactionRequest(BaseModel):
     transaction : str
 
-app = FastAPI()
-
 @app.post("/predict")
-async def predict(body : Item):
-    body = preprocessing(body)
-    return body
+async def predict(request : TransactionRequest):
+    result = engine.predict(request.transaction)
+    return result
     
 @app.post("/feedback")
 async def feedback():

@@ -19,7 +19,8 @@ class FinScribeEngine:
         # 3. Load Data
         self.categories = self._load_yaml(self.categories_path)
         self.exemplars = self._load_json(self.exemplars_path)
-        
+        print(self.categories)
+        print(self.exemplars)
         # 4. Pre-Compute Embeddings (The "Fast Lane")
         # We embed the descriptions ONCE so we don't have to do it for every request.
         self.category_embeddings = self._embed_categories()
@@ -138,7 +139,7 @@ class FinScribeEngine:
 if __name__ == "__main__":
     engine = FinScribeEngine()
     
-    test_tx = "UBER *TRIP 9921"
+    test_tx = "Blinkit"
     print(f"\nTesting: {test_tx}")
     result = engine.predict(test_tx)
     print(f"Prediction: {result['category']} ({result['confidence']})")
