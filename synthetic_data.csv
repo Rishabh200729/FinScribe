@@ -1,0 +1,33 @@
+text,label
+"AMZN MKTPLACE ORDER 123","shopping_online"
+"AMZN MKTP ORD 88X","shopping_online"
+"AMAZON INDIA ONLINE PURCHASE","shopping_online"
+"AMAZN MKTPLC 77X","shopping_online"
+"FLIPKART ONLINE SHOP","shopping_online"
+
+"STARBUCKS MUMBAI","food_coffee"
+"STARBUX DELHI","food_coffee"
+"STARBCKS KOLKATA","food_coffee"
+
+"SUBWAY SANDWICH MALL","food_restaurant"
+"SUBWY SANDWICH BLR","food_restaurant"
+"DOMINOS PIZZA ORDER","food_restaurant"
+
+"BIG BAZAAR GROCERY BILL","shopping_groceries"
+"DMART GROCERIES","shopping_groceries"
+"MORE SUPERMARKET FOOD","shopping_groceries"
+
+"CROMA ELECTRONICS MUMBAI","shopping_electronics"
+"VIJAY SALES ELECTRONIC","shopping_electronics"
+"RELIANCE DIGITAL","shopping_electronics"
+
+"UBER TRIP BANGALORE","transport_taxi"
+"UBR TRP BLR","transport_taxi"
+"OLA CAB RIDE","transport_taxi"
+
+"SHELL FUEL PUMP","fuel"
+"BP PETROL STATION","fuel"
+"INDIAN OIL FUEL","fuel"
+
+"NETFLIX.COM SUBSCRIPTION","entertainment"
+"SPOTIFY PREMUM SUB","entertainment"
