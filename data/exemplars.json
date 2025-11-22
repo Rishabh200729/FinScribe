@@ -1,52 +1,34 @@
-{
-  "Food & Dining": [
-    "STARBUCKS STORE 03292 CA",
-    "MCDONALDS #5521 NYC",
-    "DOORDASH*CHIPOTLE"
-  ],
-  "Transportation": [
-    "UBER *TRIP 28192",
-    "LYFT RIDE PENDING",
-    "SHELL OIL 572841"
-  ],
-  "Shopping": [
-    "AMZN Mktplc*TP281",
-    "TARGET T-2819 MINNEAPOLIS",
-    "APPLE.COM/BILL"
-  ],
-  "Entertainment": [
-    "NETFLIX.COM CA",
-    "Spotify USA New York",
-    "AMC THEATRES #921"
-  ],
-  "Health & Fitness": [
-    "CVS PHARMACY #2910",
-    "PLANET FITNESS MONTHLY",
-    "WALGREENS 5521"
-  ],
-  "Bills & Utilities": [
-    "AT&T MOBILITY PAYMENT",
-    "CITY OF SEATTLE UTIL",
-    "COMCAST CABLE COMM"
-  ],
-  "Travel": [
-    "DELTA AIR LINES 0062",
-    "AIRBNB *HM29182",
-    "HILTON HOTEL & RESORTS"
-  ],
-  "Income": [
-    "GUSTO PAYROLL 5521",
-    "IRS TREAS 310 TAX REF",
-    "DIRECT DEP * ACME CORP"
-  ],
-  "Transfers & Payments": [
-    "VENMO CASHOUT",
-    "CHASE CREDIT CRD AUTOPAY",
-    "ZELLE TRANSFER TO J SMITH"
-  ],
-  "Miscellaneous": [
-    "CHECK #1021",
-    "CHARITY DONATION RED CROSS",
-    "UNKNOWN MERCHANT 221"
-  ]
-}
+[
+  {
+    "text": "AMAZON MKTPLACE ORDER 123",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "AMAZON INDIA ONLINE",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "STARBUCKS MUMBAI",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "UBER TRIP BANGALORE",
+    "category_id": "transport_taxi"
+  },
+  {
+    "text": "SHELL FUEL PUMP",
+    "category_id": "fuel"
+  },
+  {
+    "text": "NETFLIX.COM SUBSCRIPTION",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "beardo",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "Jaggi Sweets Patiala",
+    "category_id": "food_dining"
+  }
+]

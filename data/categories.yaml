@@ -1,29 +1,30 @@
-Food & Dining:
-  - restaurants, fast food, cafes, coffee shops, groceries, supermarkets, bars, dining out, food delivery
-
-Transportation:
-  - rideshare, taxi, uber, lyft, public transit, subway, train, bus, gas stations, fuel, parking, tolls, auto service
-
-Shopping:
-  - retail stores, online shopping, amazon, electronics, clothing, department stores, furniture, gadgets, home improvement
-
-Entertainment:
-  - movies, cinema, streaming services, netflix, spotify, concerts, events, video games, bowling, museums
-
-Health & Fitness:
-  - gym memberships, pharmacy, drug store, doctor visits, dentist, hospitals, sports equipment, personal training
-
-Bills & Utilities:
-  - electricity, water, internet, cable, phone bill, mobile recharge, waste management, insurance premiums, rent
-
-Travel:
-  - airlines, flights, hotels, airbnb, car rentals, vacation packages, cruises, travel agencies
-
-Income:
-  - salary, paycheck, direct deposit, interest, dividends, refunds, freelance income, bonuses
-
-Transfers & Payments:
-  - credit card payment, peer to peer transfer, venmo, zelle, paypal, atm withdrawal, bank fees, savings transfer
-
-Miscellaneous:
-  - uncategorized, general expenses, subscriptions, donations, charity, gifts
+categories:
+  - id: shopping
+    label: Shopping
+    children:
+      - id: shopping_electronics
+        label: Electronics
+      - id: shopping_groceries
+        label: Groceries
+      - id: shopping_online
+        label: Online Shopping
+  - id: food_dining
+    label: Food & Dining
+    children:
+      - id: food_coffee
+        label: Coffee / Cafe
+      - id: food_restaurant
+        label: Restaurants
+  - id: fuel
+    label: Fuel
+  - id: transport
+    label: Transport
+    children:
+      - id: transport_taxi
+        label: Taxi / Ride-hailing
+      - id: transport_public
+        label: Public Transport
+  - id: bills_utilities
+    label: Bills & Utilities
+  - id: entertainment
+    label: Entertainment
