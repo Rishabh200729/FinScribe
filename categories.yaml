@@ -1,0 +1,30 @@
+categories:
+  - id: shopping
+    label: Shopping
+    children:
+      - id: shopping_electronics
+        label: Electronics
+      - id: shopping_groceries
+        label: Groceries
+      - id: shopping_online
+        label: Online Shopping
+  - id: food_dining
+    label: Food & Dining
+    children:
+      - id: food_coffee
+        label: Coffee / Cafe
+      - id: food_restaurant
+        label: Restaurants
+  - id: fuel
+    label: Fuel
+  - id: transport
+    label: Transport
+    children:
+      - id: transport_taxi
+        label: Taxi / Ride-hailing
+      - id: transport_public
+        label: Public Transport
+  - id: bills_utilities
+    label: Bills & Utilities
+  - id: entertainment
+    label: Entertainment

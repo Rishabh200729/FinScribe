@@ -1,10 +1,12 @@
 fastapi
-uvicorn
+uvicorn[standard]
 pydantic
 sentence-transformers
-scikit-learn
-numpy
-pandas
-requests
+faiss-cpu
 pyyaml
+pandas
+scikit-learn
+matplotlib
 streamlit
+python-multipart
+rapidfuzz
