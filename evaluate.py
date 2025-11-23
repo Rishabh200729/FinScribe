@@ -11,9 +11,9 @@ from sklearn.metrics import classification_report, confusion_matrix, f1_score
 
 from app.model import FinScribeEngine
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-CATEGORIES_PATH = BASE_DIR / "config" / "categories.yaml"
-EXEMPLARS_PATH = BASE_DIR / "config" / "exemplars.json"
+BASE_DIR = Path(__file__).resolve().parent
+CATEGORIES_PATH = BASE_DIR / "data" / "categories.yaml"
+EXEMPLARS_PATH = BASE_DIR / "data" / "exemplars.json"
 DATA_PATH = BASE_DIR / "evaluation" / "synthetic_data.csv"
 OUT_DIR = BASE_DIR / "evaluation"
 
@@ -40,7 +40,7 @@ def main():
     avg_latency_ms = (total_time / len(df)) * 1000.0
 
     print("=== Classification Report ===")
-    report = classification_report(y_true, y_pred, digits=3)
+    report = classification_report(y_true, y_pred, digits=3, zero_division=0)
     print(report)
 
     print(f"Macro F1: {macro_f1:.3f}")

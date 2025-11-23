@@ -74,6 +74,11 @@ class FinScribeEngine:
     ):
         self.model = SentenceTransformer(model_name)
         self.taxonomy = CategoryTaxonomy(categories_path)
+        
+        # --- ERROR HANDLING FOR MISSING CATEGORIES ---
+        if not self.taxonomy.get_all_labels():
+            raise ValueError(f"No categories loaded from {categories_path}. Check YAML format.")
+            
         self.exemplar_store = ExemplarStore(exemplars_path, self.model)
 
         self.category_ids = list(self.taxonomy.get_all_labels().keys())
@@ -119,7 +124,7 @@ class FinScribeEngine:
     def predict(
         self,
         text: str,
-        low_conf_threshold: float = 0.6,
+        low_conf_threshold: float = 0.5, # Lowered slightly since we removed normalization
         k_exemplars: int = 5,
     ) -> Dict[str, Any]:
         base_candidates = self._predict_base_category(text, top_k=5)
@@ -129,11 +134,13 @@ class FinScribeEngine:
 
         scores: Dict[str, float] = {}
         for cid, score in base_candidates:
-            scores[cid] = scores.get(cid, 0.0) + 0.7 * score
+            scores[cid] = scores.get(cid, 0.0) + (0.4 * score) # Reduced semantic weight
 
         for sim, entry in exemplar_matches:
+            print(sim, entry)
             cid = entry["category_id"]
-            scores[cid] = scores.get(cid, 0.0) + 0.8 * sim
+            # Increased exemplar weight to favor memory over fuzzy semantics
+            scores[cid] = scores.get(cid, 0.0) + (0.6 * sim) 
 
         if not scores:
             return {
@@ -142,18 +149,39 @@ class FinScribeEngine:
                 "needs_review": True,
                 "top_3": [],
                 "exemplars": [],
-                "explanation_terms": text.split()[:5],
+                "explanation_terms": [],
             }
 
-        max_score = max(scores.values())
-        for cid in scores:
-            scores[cid] /= max_score
-
+        # --- REMOVED NORMALIZATION ---
+        # Do not divide by max_score. Let raw scores compete.
+        
         sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
         top_3 = sorted_scores[:3]
-        best_cid, best_score = top_3[0]
-
+        best_cid, raw_score = top_3[0]
+        best_score = min(raw_score, 1.0)  # Clamp to 1.0 for confidence
+        
         labels = self.taxonomy.get_all_labels()
+        
+        # BETTER EXPLAINABILITY LOGIC
+        explanation_terms = []
+        pred_label_words = labels[best_cid].lower().replace('&', '').split()
+        input_words = text.lower().split()
+        
+        # Match against label
+        for word in input_words:
+            # Simple containment check
+            if any(l_word in word for l_word in pred_label_words if len(l_word)>2): 
+                explanation_terms.append(word)
+                
+        # Match against top exemplar
+        if exemplar_matches:
+            top_ex_words = exemplar_matches[0][1]['text'].lower().split()
+            for word in input_words:
+                if word in top_ex_words and word not in explanation_terms:
+                    explanation_terms.append(word)
+        
+        if not explanation_terms:
+            explanation_terms = ["Semantic Similarity"]
 
         result = {
             "prediction": labels[best_cid],
@@ -164,7 +192,7 @@ class FinScribeEngine:
                 {
                     "category_id": cid,
                     "category_label": labels[cid],
-                    "score": float(score),
+                    "score": float(min(1,score)),
                 }
                 for cid, score in top_3
             ],
@@ -177,7 +205,7 @@ class FinScribeEngine:
                 }
                 for sim, e in exemplar_matches
             ],
-            "explanation_terms": text.split()[:5],
+            "explanation_terms": list(set(explanation_terms)),
         }
         return result
 

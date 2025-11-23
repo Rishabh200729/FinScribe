@@ -1,0 +1,16 @@
+                      precision    recall  f1-score   support
+
+     bills_utilities      0.833     1.000     0.909        10
+       entertainment      1.000     0.950     0.974        20
+         food_coffee      0.769     1.000     0.870        10
+     food_restaurant      1.000     0.900     0.947        10
+                fuel      1.000     1.000     1.000        10
+shopping_electronics      1.000     0.900     0.947        20
+  shopping_groceries      1.000     0.850     0.919        20
+     shopping_online      0.741     1.000     0.851        20
+    transport_public      1.000     0.800     0.889        10
+      transport_taxi      1.000     0.700     0.824        10
+
+            accuracy                          0.914       140
+           macro avg      0.934     0.910     0.913       140
+        weighted avg      0.935     0.914     0.916       140

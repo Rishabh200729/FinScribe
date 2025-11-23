@@ -1,30 +1,35 @@
 categories:
   - id: shopping
-    label: Shopping
+    label: Shopping & Retail
     children:
-      - id: shopping_electronics
-        label: Electronics
-      - id: shopping_groceries
-        label: Groceries
       - id: shopping_online
-        label: Online Shopping
+        label: E-commerce Marketplace & Online Payments
+      - id: shopping_electronics
+        label: Consumer Electronics, Gadgets & Tech Stores
+      - id: shopping_groceries
+        label: Supermarket, Grocery Store & Daily Essentials
+  
   - id: food_dining
     label: Food & Dining
     children:
       - id: food_coffee
-        label: Coffee / Cafe
+        label: Coffee Shop, Cafe & Beverages
       - id: food_restaurant
-        label: Restaurants
-  - id: fuel
-    label: Fuel
+        label: Restaurant, Fast Food & Dining Out
+  
   - id: transport
-    label: Transport
+    label: Transportation & Travel
     children:
       - id: transport_taxi
-        label: Taxi / Ride-hailing
+        label: Taxi, Cab Ride & Ride Sharing
       - id: transport_public
-        label: Public Transport
-  - id: bills_utilities
-    label: Bills & Utilities
+        label: Public Transport, Metro, Bus & Train
+  
+  - id: fuel
+    label: Gas Station, Fuel Pump & Petrol
+  
   - id: entertainment
-    label: Entertainment
+    label: Entertainment, Movies, Streaming & Subscriptions
+  
+  - id: bills_utilities
+    label: Utility Bills, Recharge, Internet & Electricity

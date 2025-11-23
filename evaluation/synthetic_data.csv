@@ -1,0 +1,141 @@
+text,label
+AMAZON MKTPLACE,shopping_online
+AMZN ONLINE,shopping_online
+FLIPKART INTERNET,shopping_online
+FLPKRT,shopping_online
+POS AMAZON,shopping_online
+MYNTRA DESIGNS,shopping_online
+MEESHO ORDER,shopping_online
+AMAZON UPI,shopping_online
+FLIPKART UPI,shopping_online
+MYNTRA TXN,shopping_online
+STARBUCKS MUMBAI,food_coffee
+SBX COFFEE,food_coffee
+COSTA COFFEE MG ROAD,food_coffee
+BLUE TOKAI BLR,food_coffee
+STARBUCKS UPI,food_coffee
+COSTA UPI,food_coffee
+POS STARBUCKS,food_coffee
+TOKAI COFFEE,food_coffee
+TOKAI UPI,food_coffee
+STARBUCKS CAFE,food_coffee
+DOMINOS PIZZA,food_restaurant
+MCDONALDS BURGER,food_restaurant
+KFC CHICKEN,food_restaurant
+SUBWAY SANDWICH,food_restaurant
+DOMINOS UPI,food_restaurant
+MCD UPI,food_restaurant
+POS KFC,food_restaurant
+POS DOMINOS,food_restaurant
+KFC BLR,food_restaurant
+ZOMATO ORDER,food_restaurant
+SHELL FUEL PUMP,fuel
+SHELL PETROL,fuel
+BP PETROL BUNK,fuel
+HP PETROL PUMP,fuel
+HINDUSTAN PETROLEUM,fuel
+INDIAN OIL FUEL,fuel
+POS SHELL,fuel
+BPCL PUMP,fuel
+FUEL PUMP HP,fuel
+IOCL FUEL,fuel
+CROMA ELECTRONICS,shopping_electronics
+RELIANCE DIGITAL,shopping_electronics
+APPLE STORE,shopping_electronics
+BEST BUY INDIA,shopping_electronics
+CROMA UPI,shopping_electronics
+REL DIGITAL UPI,shopping_electronics
+POS CROMA,shopping_electronics
+SAMSUNG STORE,shopping_electronics
+HP LAPTOP STORE,shopping_electronics
+MI STORE,shopping_electronics
+DMART SUPERMARKET,shopping_groceries
+BIG BAZAAR GROCERY,shopping_groceries
+RELIANCE FRESH,shopping_groceries
+BLINKIT ORDER,shopping_groceries
+DMRT GROCERY,shopping_groceries
+POS DMART,shopping_groceries
+GROCERY WORLD,shopping_groceries
+ZEPHYR GREENS,shopping_groceries
+FRESH STORE,shopping_groceries
+DAILY NEEDS SHOP,shopping_groceries
+UBER TRIP,transport_taxi
+OLA RIDE,transport_taxi
+LYFT RIDE,transport_taxi
+BLUESMART CABS,transport_taxi
+UBER UPI,transport_taxi
+OLA UPI,transport_taxi
+POS UBER,transport_taxi
+OLA MINI CAB,transport_taxi
+UBER GO BLR,transport_taxi
+RAPIDO RIDE,transport_taxi
+DELHI METRO TOKEN,transport_public
+BMTC BUS TICKET,transport_public
+MUMBAI LOCAL,transport_public
+METRO CARD RECHARGE,transport_public
+DMRC TOKEN,transport_public
+BMTC PASS,transport_public
+LOCAL TRAIN MUM,transport_public
+CITY BUS TICKET,transport_public
+METRO STN BLR,transport_public
+METRO UPI,transport_public
+NETFLIX SUBSCRIPTION,entertainment
+SPOTIFY PREMIUM,entertainment
+PVR CINEMA TICKET,entertainment
+HOTSTAR SUB,entertainment
+SPTFY UPI,entertainment
+NETFLIX UPI,entertainment
+BOOKMYSHOW MOVIE,entertainment
+APPLE MUSIC,entertainment
+SONYLIV SUB,entertainment
+YOUTUBE PREMIUM,entertainment
+BESCOM ELECTRICITY BILL,bills_utilities
+AIRTEL POSTPAID BILL,bills_utilities
+JIO PREPAID RECHARGE,bills_utilities
+ACT FIBERNET BILL,bills_utilities
+WATER BILL PAYMENT,bills_utilities
+GAS BILL PAYMENT,bills_utilities
+ELECTRICITY BILL ONLINE,bills_utilities
+AIRTEL UPI,bills_utilities
+BESCOM PAYMENT,bills_utilities
+POWER BILL,bills_utilities
+AMAZON SELLER SERVICES,shopping_online
+AMZ MKTPLACE PAYMENT,shopping_online
+FLIPKART INTERNET PVT LTD,shopping_online
+FKRT ONLINE ORDER,shopping_online
+MYNTRA ONLINE PAYMENT,shopping_online
+MEESHO MKTPLACE,shopping_online
+AJIO ONLINE SHOPPING,shopping_online
+AMAZON DIGITAL ORDER,shopping_online
+FLIPKART ECOM RECEIPT,shopping_online
+AMZ ORDER ID 93822,shopping_online
+CROMA RETAIL STORE,shopping_electronics
+RELIANCE DIGITAL ELECTRONICS,shopping_electronics
+APPLE AUTHORIZED RESELLER,shopping_electronics
+SAMSUNG SMART CAFE,shopping_electronics
+SONY CENTER ELECTRONICS,shopping_electronics
+BOSE AUDIO STORE,shopping_electronics
+VIVO EXCLUSIVE STORE,shopping_electronics
+OPPO BRAND SHOP,shopping_electronics
+HP WORLD LAPTOP STORE,shopping_electronics
+MI AUTHORIZED STORE,shopping_electronics
+DMART GROCERY BILL,shopping_groceries
+RELIANCE FRESH MARKET,shopping_groceries
+NILGIRIS SUPERMARKET,shopping_groceries
+SPAR HYPERMARKET,shopping_groceries
+MORE SUPER STORE,shopping_groceries
+STAR BAZAAR GROCERY,shopping_groceries
+FRESHMART SUPERMARKET,shopping_groceries
+APNA BAZAR DAILY NEEDS,shopping_groceries
+GROFERS BLINKIT ORDER,shopping_groceries
+NATURES BASKET GROCERY,shopping_groceries
+NETFLIX MEMBERSHIP,entertainment
+PVR MOVIE HALL,entertainment
+SPOTIFY MUSIC SUB,entertainment
+SPOTIFY MONTHLY BILL,entertainment
+DISNEY HOTSTAR SUB,entertainment
+BOOKMYSHOW MOVIE TICKET,entertainment
+YOUTUBE MUSIC PREMIUM,entertainment
+SONYLIV SUBSCRIPTION,entertainment
+PVR MULTIPLEX BLR,entertainment
+MOVIE TICKET BOOKING,entertainment

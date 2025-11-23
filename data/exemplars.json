@@ -1,34 +1,698 @@
 [
   {
-    "text": "AMAZON MKTPLACE ORDER 123",
+    "text": "AMAZON",
     "category_id": "shopping_online"
   },
   {
-    "text": "AMAZON INDIA ONLINE",
+    "text": "AMZ",
     "category_id": "shopping_online"
   },
   {
-    "text": "STARBUCKS MUMBAI",
+    "text": "AMZ TXN",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "AMZN MKTP",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "AMAZON UPI",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "POS AMAZON",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "FLIPKART",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "FLP",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "FLP TXN",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "FLIPKART UPI",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "POS FLIPKART",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "MYNTRA",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "MYN",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "MYN UPI",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "MYNTRA TXN",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "MEESHO",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "MSHO",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "POS MEESHO",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "MEESHO UPI",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "STARBUCKS",
     "category_id": "food_coffee"
   },
   {
-    "text": "UBER TRIP BANGALORE",
+    "text": "SBX",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "SBX UPI",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "POS STARBUCKS",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "STARBUCKS TXN",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "COSTA COFFEE",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "CSTA",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "CSTA UPI",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "BLUE TOKAI",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "TOKAI",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "TOKAI UPI",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "DOMINOS",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "DMN",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "DOMINOS UPI",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "POS DOMINOS",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "MCDONALDS",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "MCD",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "MCD UPI",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "KFC",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "KFC UPI",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "POS KFC",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "SUBWAY",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "SBWY",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "SUBWAY UPI",
+    "category_id": "food_restaurant"
+  },
+  {
+    "text": "SHELL PUMP",
+    "category_id": "fuel"
+  },
+  {
+    "text": "SHELL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "SHL UPI",
+    "category_id": "fuel"
+  },
+  {
+    "text": "BP PETROL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "BP PTL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "POS BP PETROL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "HP PETROL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "HP PTL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "CROMA",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "CRM",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "POS CROMA",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "CROMA UPI",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "RELIANCE DIGITAL",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "RLG",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "APPLE STORE",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "APPL STR",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "DMART",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "DMRT",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "POS DMART",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "BIG BAZAAR",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "BZAR",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "RELIANCE FRESH",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "DELHI METRO",
+    "category_id": "transport_public"
+  },
+  {
+    "text": "DLMTR",
+    "category_id": "transport_public"
+  },
+  {
+    "text": "DELHI METRO UPI",
+    "category_id": "transport_public"
+  },
+  {
+    "text": "MUMBAI LOCAL",
+    "category_id": "transport_public"
+  },
+  {
+    "text": "MBLOCAL",
+    "category_id": "transport_public"
+  },
+  {
+    "text": "BMTC BUS",
+    "category_id": "transport_public"
+  },
+  {
+    "text": "BMTC",
+    "category_id": "transport_public"
+  },
+  {
+    "text": "UBER",
     "category_id": "transport_taxi"
+  },
+  {
+    "text": "UBR",
+    "category_id": "transport_taxi"
+  },
+  {
+    "text": "UBR UPI",
+    "category_id": "transport_taxi"
+  },
+  {
+    "text": "OLA",
+    "category_id": "transport_taxi"
+  },
+  {
+    "text": "OLA TXN",
+    "category_id": "transport_taxi"
+  },
+  {
+    "text": "LYFT",
+    "category_id": "transport_taxi"
+  },
+  {
+    "text": "BESCOM BILL",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "BSCM",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "BESCOM UPI",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "AIRTEL POSTPAID",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "AIRTEL UPI",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "JIO RECHARGE",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "JIO",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "NETFLIX",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "NTFLX",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "NETFLIX UPI",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "SPOTIFY",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "SPTFY",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "PVR CINEMA",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "PVR",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "BESCOM ELECTRICITY BILL",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "BESCOM BILL PAYMENT",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "BESCOM ONLINE BILL",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "BESCOM UPI PAYMENT",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "AIRTEL POSTPAID BILL",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "AIRTEL BILL PAYMENT",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "AIRTEL FIBER BILL",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "AIRTEL POSTPAID UPI",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "JIO PREPAID RECHARGE",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "JIO RECHARGE UPI",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "JIO BILL PAYMENT",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "JIO FIBER MONTHLY BILL",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "ACT FIBERNET BILL",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "ACT FIBERNET PAYMENT",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "WATER BILL PAYMENT",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "WATER SUPPLY BILL",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "ELECTRICITY BILL ONLINE",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "POWER BILL PAYMENT",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "BBMP PROPERTY TAX PAYMENT",
+    "category_id": "bills_utilities"
+  },
+  {
+    "text": "GAS BILL PAYMENT",
+    "category_id": "bills_utilities"
   },
   {
     "text": "SHELL FUEL PUMP",
     "category_id": "fuel"
   },
   {
-    "text": "NETFLIX.COM SUBSCRIPTION",
-    "category_id": "entertainment"
+    "text": "SHELL PUMP UPI",
+    "category_id": "fuel"
   },
   {
-    "text": "beardo",
+    "text": "SHELL PETROL BUNK",
+    "category_id": "fuel"
+  },
+  {
+    "text": "SHELL FUEL STN",
+    "category_id": "fuel"
+  },
+  {
+    "text": "BP PETROL BUNK",
+    "category_id": "fuel"
+  },
+  {
+    "text": "BP PETROL UPI",
+    "category_id": "fuel"
+  },
+  {
+    "text": "BPCL PETROL PUMP",
+    "category_id": "fuel"
+  },
+  {
+    "text": "HP PETROL PUMP",
+    "category_id": "fuel"
+  },
+  {
+    "text": "HP PETROL UPI",
+    "category_id": "fuel"
+  },
+  {
+    "text": "HINDUSTAN PETROLEUM",
+    "category_id": "fuel"
+  },
+  {
+    "text": "HINDUSTAN PETROL UPI",
+    "category_id": "fuel"
+  },
+  {
+    "text": "INDIAN OIL FUEL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "INDIAN OIL PUMP",
+    "category_id": "fuel"
+  },
+  {
+    "text": "INDIAN OIL UPI",
+    "category_id": "fuel"
+  },
+  {
+    "text": "FUEL PUMP BPCL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "FUEL STATION HPCL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "PETROL PUMP SHELL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "PETROL BUNK HP",
+    "category_id": "fuel"
+  },
+  {
+    "text": "IOCL FUEL PURCHASE",
+    "category_id": "fuel"
+  },
+  {
+    "text": "FUEL CHARGE SHELL",
+    "category_id": "fuel"
+  },
+  {
+    "text": "AMAZON SELLER SERVICES",
     "category_id": "shopping_online"
   },
   {
-    "text": "Jaggi Sweets Patiala",
-    "category_id": "food_dining"
+    "text": "AMZ MKTPLACE PAYMENT",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "FLIPKART INTERNET PVT LTD",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "FKRT ONLINE ORDER",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "MYNTRA ONLINE PAYMENT",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "MEESHO MKTPLACE",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "AJIO ONLINE SHOPPING",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "AMAZON DIGITAL ORDER",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "FLIPKART ECOM RECEIPT",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "AMZ ORDER ID 93822",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "CROMA RETAIL STORE",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "RELIANCE DIGITAL ELECTRONICS",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "APPLE AUTHORIZED RESELLER",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "SAMSUNG SMART CAFE",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "SONY CENTER ELECTRONICS",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "BOSE AUDIO STORE",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "VIVO EXCLUSIVE STORE",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "OPPO BRAND SHOP",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "HP WORLD LAPTOP STORE",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "MI AUTHORIZED STORE",
+    "category_id": "shopping_electronics"
+  },
+  {
+    "text": "DMART GROCERY BILL",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "RELIANCE FRESH MARKET",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "NILGIRIS SUPERMARKET",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "SPAR HYPERMARKET",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "MORE SUPER STORE",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "STAR BAZAAR GROCERY",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "FRESHMART SUPERMARKET",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "APNA BAZAR DAILY NEEDS",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "GROFERS BLINKIT ORDER",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "NATURES BASKET GROCERY",
+    "category_id": "shopping_groceries"
+  },
+  {
+    "text": "NETFLIX MEMBERSHIP",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "PVR MOVIE HALL",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "SPOTIFY MUSIC SUB",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "SPOTIFY MONTHLY BILL",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "DISNEY HOTSTAR SUB",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "BOOKMYSHOW MOVIE TICKET",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "YOUTUBE MUSIC PREMIUM",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "SONYLIV SUBSCRIPTION",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "PVR MULTIPLEX BLR",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "MOVIE TICKET BOOKING",
+    "category_id": "entertainment"
+  },
+  {
+    "text": "MINISO ",
+    "category_id": "shopping"
+  },
+  {
+    "text": "UNIQLO",
+    "category_id": "shopping"
   }
 ]

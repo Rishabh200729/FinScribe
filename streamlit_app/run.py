@@ -277,7 +277,10 @@ with col_right:
                 for c in pred["top_3"]:
                     # Custom Progress Bar
                     st.write(f"**{c['category_label']}**")
-                    st.progress(c['score'])
+                    # Ensure score is float and clamped between 0.0 and 1.0
+                    score_val = float(c['score'])
+                    score_val = max(0.0, min(1.0, score_val)) 
+                    st.progress(score_val)
             
             with e2:
                 st.markdown("#### 🧠 Explainability Terms")
