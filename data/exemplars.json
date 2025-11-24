@@ -694,5 +694,33 @@
   {
     "text": "UNIQLO",
     "category_id": "shopping"
+  },
+  {
+    "text": "AMZ MKTP 92W UPI",
+    "category_id": "shopping_online"
+  },
+  {
+    "text": "STARBUK BLR",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "STARBUK BLR",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "STARBUK BLR",
+    "category_id": "food_coffee"
+  },
+  {
+    "text": "RAPIDO 123",
+    "category_id": "transport_taxi"
+  },
+  {
+    "text": "RAPIDO 123",
+    "category_id": "transport_taxi"
+  },
+  {
+    "text": "RAPIDO",
+    "category_id": "transport_taxi"
   }
 ]

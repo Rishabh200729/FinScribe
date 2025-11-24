@@ -283,18 +283,44 @@ with col_right:
                     st.progress(score_val)
             
             with e2:
-                st.markdown("#### 🧠 Explainability Terms")
-                st.caption("The model focused on these tokens:")
-                tags_html = "".join([f"<span class='term-tag'>{t}</span>" for t in pred["explanation_terms"]])
-                st.markdown(tags_html, unsafe_allow_html=True)
-                
+                exp = pred.get("explanation", {})
+
+                st.markdown("#### 🧠 Explainability")
+
+                # 1. Simple reason summary
+                friendly = exp.get("friendly_summary", {})
+                st.write(
+                    f"**Why this was predicted:** "
+                    f"{friendly.get('semantic', '')}, "
+                    f"{friendly.get('exemplar', '')}, "
+                    f"{friendly.get('fuzzy', '')}."
+                )
+
                 st.markdown("<br>", unsafe_allow_html=True)
-                st.markdown("#### 📜 Memory (Exemplars)")
-                if pred["exemplars"]:
-                    for ex in pred["exemplars"][:2]: # Show top 2 only to save space
-                        st.markdown(f"- `{ex['text']}` → **{ex['category_label']}** ({ex['similarity']:.2f})")
+
+                # 2. Show top 2 important tokens
+                tokens = exp.get("token_importance", [])
+                if tokens:
+                    st.caption("Key tokens the model focused on:")
+                    simple_tokens = [t['token'] for t in tokens][:3] 
+                    token_tags = "".join(
+                        [f"<span class='term-tag'>{t}</span>" for t in simple_tokens]
+                    )
+                    st.markdown(token_tags, unsafe_allow_html=True)
                 else:
-                    st.caption("No direct memory matches found. Using semantic fallback.")
+                    st.caption("No specific tokens identified.")
+
+                st.markdown("<br>", unsafe_allow_html=True)
+
+                # 3. Show 1 nearest exemplar
+                nearest = exp.get("nearest_exemplars", [])
+                if nearest:
+                    top_ex = nearest[0]
+                    st.caption("Closest matching past example:")
+                    st.write(f"`{top_ex['exemplar_text']}` → **{top_ex['exemplar_category']}**")
+                else:
+                    st.caption("No exemplar match found.")
+
 
         # --- 4. FEEDBACK LOOP ---
         st.markdown("<br>", unsafe_allow_html=True)

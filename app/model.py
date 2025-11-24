@@ -120,28 +120,104 @@ class FinScribeEngine:
             boosted.append((cid, score + 0.1 * fuzz_score))
         boosted.sort(key=lambda x: x[1], reverse=True)
         return boosted
+    from rapidfuzz import fuzz
+
+    def build_explanation(self, text, prediction, scores, nearest_exemplars):
+        """
+        Local explainability engine (No GenAI).
+        
+        Args:
+            text: raw transaction string
+            prediction: predicted category_id
+            scores: dict with semantic_score, exemplar_score, fuzzy_score
+            nearest_exemplars: list of (text, category, similarity)
+        
+        Returns:
+            dict: explanation object
+        """
+
+        # 1. Token-level fuzzy importance
+        tokens = text.split()
+        token_scores = []
+        for tok in tokens:
+            token_scores.append({
+                "token": tok,
+                "fuzzy_score": max(
+                    fuzz.partial_ratio(tok, prediction),
+                    max((fuzz.partial_ratio(tok, ex[0]) for ex in nearest_exemplars), default=0)
+                )
+            })
+
+        # 2. Nearest exemplars formatted
+        exemplar_info = [
+            {
+                "exemplar_text": ex_text,
+                "exemplar_category": ex_cat,
+                "similarity": float(sim)
+            }
+            for ex_text, ex_cat, sim in nearest_exemplars
+        ]
+
+        # 3. Convert raw scores to user-friendly language
+        def explain_score(label, value):
+            if value > 0.80: return f"Strong match with {label}"
+            if value > 0.60: return f"Moderate match with {label}"
+            return f"Weak match with {label}"
+
+        friendly = {
+            "semantic": explain_score("semantic patterns", scores.get("semantic_score", 0)),
+            "exemplar": explain_score("past examples", scores.get("exemplar_score", 0)),
+            "fuzzy": explain_score("text similarity", scores.get("fuzzy_score", 0))
+        }
+
+        # Final explanation dictionary
+        return {
+            "predicted_category": prediction,
+            "scores": scores,
+            "token_importance": token_scores,
+            "nearest_exemplars": exemplar_info,
+            "friendly_summary": friendly,
+        }
 
     def predict(
         self,
         text: str,
-        low_conf_threshold: float = 0.5, # Lowered slightly since we removed normalization
+        low_conf_threshold: float = 0.5,
         k_exemplars: int = 5,
     ) -> Dict[str, Any]:
+        # 1. BASE CATEGORY PREDICTION (semantic)
         base_candidates = self._predict_base_category(text, top_k=5)
+
+        # 2. FUZZY BOOST
         base_candidates = self._fuzzy_boost(text, base_candidates)
 
+        # Extract semantic scores for explanation
+        base_score_map = {cid:score for cid,score in base_candidates}
+
+        # 3. EXEMPLAR SEARCH
         exemplar_matches = self.exemplar_store.search(text, k=k_exemplars)
 
-        scores: Dict[str, float] = {}
-        for cid, score in base_candidates:
-            scores[cid] = scores.get(cid, 0.0) + (0.4 * score) # Reduced semantic weight
+        # Exemplar scoring
+        exemplar_score_map = {}
+        nearest_exemplars_list = []  # For explanation module
 
         for sim, entry in exemplar_matches:
-            print(sim, entry)
             cid = entry["category_id"]
-            # Increased exemplar weight to favor memory over fuzzy semantics
-            scores[cid] = scores.get(cid, 0.0) + (0.6 * sim) 
+            exemplar_score_map[cid] = exemplar_score_map.get(cid, 0.0) + sim
+            nearest_exemplars_list.append((entry["text"], entry["category_id"], sim))
 
+        # 4. COMBINE SCORES
+        scores: Dict[str, float] = {}
+
+        # Semantic weight 0.4
+        for cid, score in base_score_map.items():
+            scores[cid] = scores.get(cid, 0.0) + (0.4 * score)
+
+        # Exemplar weight 0.6
+        for cid, score in exemplar_score_map.items():
+            scores[cid] = scores.get(cid, 0.0) + (0.6 * score)
+
+        # 5. NO SCORES → fallback
         if not scores:
             return {
                 "prediction": None,
@@ -152,62 +228,81 @@ class FinScribeEngine:
                 "explanation_terms": [],
             }
 
-        # --- REMOVED NORMALIZATION ---
-        # Do not divide by max_score. Let raw scores compete.
-        
+        # 6. SORT AND PICK BEST
         sorted_scores = sorted(scores.items(), key=lambda x: x[1], reverse=True)
         top_3 = sorted_scores[:3]
-        best_cid, raw_score = top_3[0]
-        best_score = min(raw_score, 1.0)  # Clamp to 1.0 for confidence
-        
-        labels = self.taxonomy.get_all_labels()
-        
-        # BETTER EXPLAINABILITY LOGIC
-        explanation_terms = []
-        pred_label_words = labels[best_cid].lower().replace('&', '').split()
-        input_words = text.lower().split()
-        
-        # Match against label
-        for word in input_words:
-            # Simple containment check
-            if any(l_word in word for l_word in pred_label_words if len(l_word)>2): 
-                explanation_terms.append(word)
-                
-        # Match against top exemplar
-        if exemplar_matches:
-            top_ex_words = exemplar_matches[0][1]['text'].lower().split()
-            for word in input_words:
-                if word in top_ex_words and word not in explanation_terms:
-                    explanation_terms.append(word)
-        
-        if not explanation_terms:
-            explanation_terms = ["Semantic Similarity"]
 
-        result = {
+        best_cid, best_raw_score = top_3[0]
+        best_confidence = float(min(best_raw_score, 1.0))
+
+        labels = self.taxonomy.get_all_labels()
+
+        # 7. FUZZY SCORE FOR EXPLANATION
+        fuzzy_score = max(
+            fuzz.partial_ratio(text.lower(), labels[best_cid].lower()) / 100.0,
+            max((fuzz.partial_ratio(text.lower(), ex[0].lower()) for ex in nearest_exemplars_list), default=0) / 100.0
+        )
+
+        # Extract semantic + exemplar score for best category
+        best_score_semantic = base_score_map.get(best_cid, 0.0)
+        best_score_exemplar = exemplar_score_map.get(best_cid, 0.0)
+
+        # 8. BASIC EXPLANATION TERMS
+        explanation_terms = []
+        pred_words = labels[best_cid].lower().replace("&", "").split()
+        input_words = text.lower().split()
+
+        for w in input_words:
+            if any(p in w for p in pred_words):
+                explanation_terms.append(w)
+
+        if nearest_exemplars_list:
+            exemplar_tokens = nearest_exemplars_list[0][0].lower().split()
+            for w in input_words:
+                if w in exemplar_tokens and w not in explanation_terms:
+                    explanation_terms.append(w)
+
+        if not explanation_terms:
+            explanation_terms = ["semantic pattern match"]
+
+        # 9. CALL EXPLAINABILITY ENGINE (your new local function)
+        explanation = self.build_explanation(
+            text=text,
+            prediction=best_cid,
+            scores={
+                "semantic_score": float(best_score_semantic),
+                "exemplar_score": float(best_score_exemplar),
+                "fuzzy_score": float(fuzzy_score),
+            },
+            nearest_exemplars=nearest_exemplars_list
+        )
+
+        # 10. CONSTRUCT FINAL RESULT
+        return {
             "prediction": labels[best_cid],
             "category_id": best_cid,
-            "confidence": float(best_score),
-            "needs_review": best_score < low_conf_threshold,
+            "confidence": best_confidence,
+            "needs_review": best_confidence < low_conf_threshold,
             "top_3": [
                 {
                     "category_id": cid,
                     "category_label": labels[cid],
-                    "score": float(min(1,score)),
+                    "score": float(min(1, score)),
                 }
                 for cid, score in top_3
             ],
             "exemplars": [
                 {
-                    "text": e["text"],
-                    "category_id": e["category_id"],
-                    "category_label": labels.get(e["category_id"], e["category_id"]),
+                    "text": ex_text,
+                    "category_id": ex_cat,
+                    "category_label": labels.get(ex_cat, ex_cat),
                     "similarity": float(sim),
                 }
-                for sim, e in exemplar_matches
+                for ex_text, ex_cat, sim in nearest_exemplars_list
             ],
-            "explanation_terms": list(set(explanation_terms)),
+            "explanation_terms": explanation_terms,
+            "explanation": explanation,
         }
-        return result
 
     def add_feedback(self, text: str, category_id: str) -> None:
         self.exemplar_store.add_exemplar(text, category_id)

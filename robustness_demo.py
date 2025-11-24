@@ -5,8 +5,8 @@ from pathlib import Path
 from app.model import FinScribeEngine
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-CATEGORIES_PATH = BASE_DIR / "config" / "categories.yaml"
-EXEMPLARS_PATH = BASE_DIR / "config" / "exemplars.json"
+CATEGORIES_PATH = BASE_DIR / "data" / "categories.yaml"
+EXEMPLARS_PATH = BASE_DIR / "data" / "exemplars.json"
 
 
 def main():
